@@ -9,9 +9,12 @@
 library(sna)
 library(magick)
 library(parallel)
-dim <- c(10)
+rm(list=ls())  #### Borramos los datos de memoria
+dim <- c(50)
 num <-  dim^2
 probavivo<-seq(0,1, by=0.05)
+
+
 
 paso <- function(pos) {
   fila <- floor((pos - 1) / dim) + 1
@@ -44,8 +47,6 @@ for (vivos  in  probavivo){
       actual <- matrix(siguiente, nrow=dim, ncol=dim, byrow=TRUE)
     }
   }
-  #print(vivos)
-  #cat(resultados, "\n")
 }
 }
 
@@ -58,15 +59,14 @@ colnames(aq)<-c("dimension","Replica","Probabilidad", "iteracion")
 
 
 
-
-
-
-
-
 setwd("C:/Users/Z230/Dropbox/PISIS/PhD/Simulacion_Sistemas/Practica_2") 
 
-pdf(file = "P2_N.pdf", bg = "transparent")
+w2<-paste("P2_N_D",dim,  ".pdf", sep="")
+pdf(file = w2, bg = "transparent")
 
+
+
+w1=paste("Dimensión ", dim,sep="")
 b<-matrix(c(2,0,1,3),2,2,byrow=TRUE)
 nf <- layout(b, widths=c(3,1), heights=c(1,3), respect=TRUE)
 top <- max(c(xhist$counts, yhist$counts))
@@ -78,13 +78,15 @@ boxplot(aq[,4]~aq[,3], ylab="iteración", xlab="Probabilidad", cex.lab=1.5)
 
 
 par(mar=c(0,4,1,1))
-plot(density(aq[,4]), xlab="", ylab="", main="", axes = F, col=4, lwd=3)
-#barplot(xhist$counts, axes=FALSE, space=0, horiz=FALSE, col=topo.colors( length( xhist$breaks)))
+plot(density(aq[,4]), xlab="", ylab="", main="", axes = F, col=4, lwd=2)
+title(w1)
 abline(v =mean(aq[,4]), col = "red", lty = 3)
 
 
 par(mar=c(4,0,1,1))
 barplot(yhist$counts, axes=FALSE, space=0, horiz=TRUE, col=topo.colors( length( yhist$breaks)))
 abline(h =mean((aq[,3])), col = "green", lty = 3, lwd=2)
+
+
 dev.off()
   
