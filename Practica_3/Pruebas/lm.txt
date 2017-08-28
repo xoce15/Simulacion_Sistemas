@@ -1,0 +1,6 @@
+                 Df  Sum Sq Mean Sq F value Pr(>F)    
+Ordenamiento      1   98782   98782    4318 <2e-16 ***
+Procesa           1  193844  193844    8473 <2e-16 ***
+Residuals    196137 4487263      23                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
