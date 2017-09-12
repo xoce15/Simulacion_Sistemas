@@ -159,6 +159,33 @@ cual es poco alentador para estos pronosticos.
 
 Si se usa la propuesta del autor paralelizada la media del error de estimación es de 1.198e+29 y aunque la estrategia implementada 
 generá errores fuertes, dichos errores son de menor magnitud a comparación del presentado en [\[2\]](#bibliograf%C3%ADa).
+<p align="justify">
+La Tabla 1, presenta las pruebas estadisticas para las diferentes combinaciones usadas, asi como el error relativo para la 
+predicción. En donde cinco de las combinaciones usadas no pasan la prueba de normalidad y las restantes si lo hacen, para lo cual se puede usar en los casos que no pasan dicha prueba otra distribucción que mejor represente los datos. Aunque cinco de los datos no son normales, se pensaria que las veces cuando el error relativo es menor se debe al correcto ajuste a la distribucción normal para lo cual se corrio una prueba de correlación para validar está hipotesis. La prueba de correlación 
+da un valor de -30%, por lo cual no se puede validar la existencia de la correlación lineal entre estas variables. 
+</p>
+
+<caption>Tabla 1. Pruebas estadísticas </caption><br>
+
+ | Valor p | Error relatico 
+ | ------:        | -----: |
+ |  0.993       |  821.208  |
+ |  0.942        | 85.650|
+ |0.878   |399.234|
+ |0.924   |  0.449|
+ |0.025   |1823.352|
+ |0.214   | 495.314|
+ |0.113   | 282.212|
+ |0.061   | 13.162|
+ |0.046   | 968.931|
+ |0.041   |1088.329|
+ |0.084   |1910.133|
+ |0.049   | 59.670|
+ |0.034   | 435.682|
+ |0.096   |  294.835|
+ | 0.190  | 768.733|
+ | 0.221  | 1219.975|
+
 
 
 
