@@ -108,7 +108,7 @@ En la  <a href="#tabl1"> Cuadro 1</a>,  contiene la prueba estadistica  de Krusk
 | :-------: | ------:        | -----: |
 | secu/para        | 7         | 0.4289   |
 <caption>Cuadro 1. Pruebas estadísticas </caption><br>
-
+<br>
   
  <p align="justify">
 La <a href="#fig3"> Figura 3</a>, muestra los datos recolectados en el experimento por medio de una 
