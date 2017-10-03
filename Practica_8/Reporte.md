@@ -126,6 +126,23 @@ La <a href="#fig3"> Figura 3</a>, muestra los datos recolectados en el experimen
 </p>
   
   
+ <p align="justify">
+La <a href="#fig4"> Figura 4</a>, muestra la variación de la distribución a lo largo del tiempo, en donde la linea
+ roja representa la media de los cúmulos+la desviación estandar  de los cúmulos dividida por dos. 
+</p>
+  
+  
+  
+ <p align="center">
+<div id="fig4" style="width:300px; height=200px">
+<img src="https://github.com/xoce15/Simulacion_Sistemas/blob/master/Practica_8/Graficas/P8.gif" height="70%" width="70%"/><br>
+<b>Figura 4.</b> Variación de las distribuciones con k=10000
+</div>
+</p>
+  
+  
+  
+  
 ## Bibliografía
 1. S.E. Schaeffer. Práctica 8:Busqueda Local, <i>R paralelo: simulación & análisis de datos</i>, http://elisa.dyndns-web.com/teaching/comp/par/p8.html.
 
