@@ -147,12 +147,12 @@ para explicar un alto porcentage de la varicación seria necesario una  <img src
 ## Bibliografía
 1. S.E. Schaeffer. Práctica 9:interacciones entre partículas, <i>R paralelo: simulación & análisis de datos</i>, http://elisa.dyndns-web.com/teaching/comp/par/p9.html.
 
-# Anexo
+## Anexo
 
 <p align="justify">
-La <a href="#fig8"> Figura 8</a> y  <a href="#fig9"> Figura 9</a>, presentan los resultados para la simulación 
+La <a href="#fig8"> Figura 8</a> y <a href="#fig9"> Figura 9</a>, presentan los resultados para la simulación 
 con 500 particulas, en donde se nota en mayor escala como se van reduciendo los desplazamientos al aumentar la 
-  masa de la particula en <a href="#fig8"> Figura 8</a> mientras que <a href="#fig9"> Figura 9</a> se visualiza
+  masa de la particula en <a href="#fig8"> Figura 8</a>, mientras que <a href="#fig9"> Figura 9</a>, se visualiza
   como van moviendose las particulas en cada iteracción.
 </p>
 
