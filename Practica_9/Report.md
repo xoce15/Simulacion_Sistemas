@@ -27,6 +27,8 @@ Dichas masas fueron acomodadas de menor a mayor para probar visualmente las hipo
 a lo largo de está práctica. Cantidad de particulas 50.
 Los radios siguen la siguiente relación para ser generados 0.02masa/max(masa)
 
+
+
 # Resultados
 
 
@@ -141,6 +143,8 @@ masa en la estrategia de creación. Al aumentar  <img src="https://latex.codecog
 en promedio se mejora el modelo de regresión pero se han contemplado pocas variables por lo cual 
 para explicar un alto porcentage de la varicación seria necesario una  <img src="https://latex.codecogs.com/gif.latex?t"/>:500, al menos o simplemente considerar otras covariables. El hecho de controlar  <img src="https://latex.codecogs.com/gif.latex?c"/> se pudo incrementar el coeficiente de correlación de la regresión. 
  </p> 
+ 
+ 
 ## Bibliografía
 1. S.E. Schaeffer. Práctica 9:interacciones entre partículas, <i>R paralelo: simulación & análisis de datos</i>, http://elisa.dyndns-web.com/teaching/comp/par/p9.html.
 
