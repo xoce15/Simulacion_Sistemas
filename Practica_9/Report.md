@@ -25,7 +25,7 @@ siguen una distribucción lognormal, dado que se quiere muchas particulas con gr
 con poco masa, dado que si tienen poca masa se moverán más rapido. Por lo cual se eligio tener pocos elementos pequeños. 
 Dichas masas fueron acomodadas de menor a mayor para probar visualmente las hipotesis que se estarán probando 
 a lo largo de está práctica. Cantidad de particulas 50.
-Los radios siguen la siguiente relación para ser generados 0.02masa/max(masa)
+Los radios siguen la siguiente relación para ser generados 0.02masa/max(masa).
 
 
 
