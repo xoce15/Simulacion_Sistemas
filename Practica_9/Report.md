@@ -134,13 +134,13 @@ para designar las masas.
 </p>
 
 # Conclusiones
+
+<p align="justify">
 El desplazamiento es afectado significativamente con respecto a la masa que tiene la particula, y dicha 
 masa en la estrategia de creación. Al aumentar  <img src="https://latex.codecogs.com/gif.latex?t"/>
 en promedio se mejora el modelo de regresión pero se han contemplado pocas variables por lo cual 
-para explicar un alto porcentage de la varicación seria necesario una  <img src="https://latex.codecogs.com/gif.latex?t"/>:500,
-al menos o simplemente considerar otras covariables. El hecho de controlar  <img src="https://latex.codecogs.com/gif.latex?c"/>
-se pudo incrementar el coeficiente de correlación de la regresión. 
-  
+para explicar un alto porcentage de la varicación seria necesario una  <img src="https://latex.codecogs.com/gif.latex?t"/>:500, al menos o simplemente considerar otras covariables. El hecho de controlar  <img src="https://latex.codecogs.com/gif.latex?c"/> se pudo incrementar el coeficiente de correlación de la regresión. 
+ </p> 
 ## Bibliografía
 1. S.E. Schaeffer. Práctica 9:interacciones entre partículas, <i>R paralelo: simulación & análisis de datos</i>, http://elisa.dyndns-web.com/teaching/comp/par/p9.html.
 
