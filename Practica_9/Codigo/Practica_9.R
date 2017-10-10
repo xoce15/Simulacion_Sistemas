@@ -1,0 +1,118 @@
+##############################################################################
+###                          Practica 9. Modelo de urnas                    ##
+###                                                                         ##
+###                     03/10/2017                                          ##
+###                                                                         ##
+##############################################################################
+
+setwd("C:/Users/Z230/Dropbox/PISIS/PhD/Simulacion_Sistemas/Practica_9/Graficas")
+#file.remove(list.files(pattern=".png")) 
+rm(list=ls())
+gc(TRUE)
+library(parallel)
+
+######################### Funciones utilizadas    ##################################################
+
+n <- 50
+p <- data.frame(x = rnorm(n), y=rnorm(n), c=rnorm(n), peso=rlnorm(n,1,2)  )
+#p$peso<-p$peso/max(p$peso)
+xmax <- max(p$x)
+xmin <- min(p$x)
+p$x <- (p$x - xmin) / (xmax - xmin) # ahora son de 0 a 1
+ymax <- max(p$y)
+ymin <- min(p$y)
+p$y <- (p$y - ymin) / (ymax - ymin) # las y tambien
+cmax <- max(p$c)
+cmin <- min(p$c)
+p$c <- 2 * (p$c - cmin) / (cmax - cmin) - 1 # cargas son entre -1 y 1
+p$g <- round(5 * p$c) # coloreamos segun la carga a 11 niveles de -5 a 5
+paso <- floor(256 / 10)
+niveles <- seq(0, 255, paso)
+colores <- rgb(niveles, rep(0, 11), rev(niveles), max=255)
+png("p9i.png")
+library(lattice)
+xyplot(y ~ x, group=g, data=p, auto.key=list(space="right"),
+       xlab="X", ylab="Y", main="Part\u{00ed}culas generadas",
+       par.settings = list(superpose.symbol = list(pch = 15, cex = 1.5,
+                                                   col = colores)))
+graphics.off()
+eps <- 0.001
+fuerza <- function(i) {
+  xi <- p[i,]$x
+  yi <- p[i,]$y
+  ci <- p[i,]$c
+  fx <- 0
+  fy <- 0
+  for (j in 1:n) {
+    cj <- p[j,]$c
+    dir <- (-1)^(1 + 1 * (ci * cj < 0))
+    dx <- xi - p[j,]$x
+    dy <- yi - p[j,]$y
+    factor <- dir * abs(ci - cj) / (sqrt(dx^2 + dy^2) + eps)
+    fx <- fx - dx * factor
+    fy <- fy - dy * factor
+  }
+  
+   #fx<-fx*(1/p$peso)
+   #fy<-fy*(1/p$peso)
+  return(c(fx, fy))
+}
+suppressMessages(library(doParallel))
+registerDoParallel(makeCluster(detectCores() - 1))
+#system("rm -f p9_t*.png") # borramos anteriores en el caso que lo hayamos corrido
+tmax <- 100
+digitos <- floor(log(tmax, 10)) + 1
+tl <- "0"
+while (nchar(tl) < digitos) {
+  tl <- paste("0", tl, sep="")
+}
+png(paste("p9_t", tl, ".png", sep=""))
+#plot(p$x, p$y, col=colores[p$g+6], pch=19, cex=1.5, xlim=c(-0.1, 1.1), ylim=c(-0.1, 1.1),
+#    main="Estado inicial", xlab="X", ylab="Y")
+
+ggplot(data=p, aes(x=x ,y=y, size=peso, col=colores[p$g+6]) )+geom_point(show.legend =  FALSE)+xlim(c(0,1))+ylim(c(0,1))+  
+  ggtitle(paste("Estado inicial "))  
+
+
+
+graphics.off()
+for (iter in 1:tmax) {
+  f <- foreach(i = 1:n, .combine=c) %dopar% fuerza(i)
+  delta <- 0.02 / max(abs(f)) # que nadie desplace una paso muy largo
+  p$x <- foreach(i = 1:n, .combine=c) %dopar% max(min(p[i,]$x + delta * f[c(TRUE, FALSE)][i]*(1/p$peso[i])  , 1), 0)
+  p$y <- foreach(i = 1:n, .combine=c) %dopar% max(min(p[i,]$y + delta * f[c(FALSE, TRUE)][i]*(1/p$peso[i]), 1), 0)
+  tl <- paste(iter, "", sep="")
+  while (nchar(tl) < digitos) {
+    tl <- paste("0", tl, sep="")
+  }
+  png(paste("p9_t", tl, ".png", sep=""))
+ # plot(p$x, p$y, col=colores[p$g+6], pch=16, cex=1.5, xlim=c(-0.1, 1.1), ylim=c(-0.1, 1.1),
+  #     main=paste("Paso", iter), xlab="X", ylab="Y")
+ print( ggplot(data=p, aes(x=x ,y=y, size=peso, col=colores[p$g+6]) )+geom_point(show.legend =  FALSE)+xlim(c(0,1))+ylim(c(0,1))+  
+          ggtitle(paste("Paso ", iter))    )
+  graphics.off()
+}
+stopImplicitCluster()
+
+#ggtitle(paste("Distribución", i))+
+library(ggplot2)
+
+
+
+library(magick)
+
+setwd("C:/Users/Z230/Dropbox/PISIS/PhD/Simulacion_Sistemas/Practica_9/Graficas")
+w<-0:tmax
+w1<-ifelse(w<10, paste("00",w, sep=""),ifelse(w<100, paste("0", w, sep = "" ),  w ) )
+
+frames=lapply(w1,function(w1) image_read(paste("p9_t",w1,".png",sep="")))
+animation <- image_animate(image_join(frames),fps=5)
+print(animation)
+w3<-paste("P9_", ".gif",sep=""  )
+image_write(animation, w3 )
+sapply(1:t,function(x) file.remove(paste("Practica7_",x,".png",sep="")))
+
+
+
+
+#system("convert -delay 50 -size 300x300 p9_t*.png -loop 0 p9.gif") # creamos animacion con ImageMagick
