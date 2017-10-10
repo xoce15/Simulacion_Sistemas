@@ -122,8 +122,7 @@ promedio de las particulas. Donde tanto en el eje X y Y, las medias están aprox
 
 <p align="justify">
 La <a href="#fig7"> Figura 7</a>, muestra como se van desplazando las particulas usando una distribucción normal,
-como se  ha diseñada los tamaños de las particulas tienen poca variación una con respecto a la otra.  Ademas 
-cual se van aglomerando hacia el centro de la cuadricula, hasta converger en el  centro, dado la distribucción que se empleo
+como se  ha diseñada los tamaños de las particulas tienen poca variación una con respecto a la otra.  Además se van aglomerando hacia el centro de la cuadricula, hasta converger en el  centro, dado la distribucción que se empleo
 para designar las masas. 
 </p>
 
