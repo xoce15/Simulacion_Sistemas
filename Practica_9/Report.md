@@ -38,7 +38,7 @@ en donde las de mayor tamaño tienen movimientos menores que las de menor tamañ
 </p>
 
 
-  <p align="center">
+<p align="center">
 <div id="fig1" style="width:300px; height=200px">
 <img src="https://github.com/xoce15/Simulacion_Sistemas/blob/master/Practica_9/Graficas/P9R2.gif" height="70%" width="70%"/><br>
 <b>Figura 1.</b> Movimiento de las particulas dependiendo de la masa 
@@ -146,5 +146,30 @@ para explicar un alto porcentage de la varicación seria necesario una  <img src
  
 ## Bibliografía
 1. S.E. Schaeffer. Práctica 9:interacciones entre partículas, <i>R paralelo: simulación & análisis de datos</i>, http://elisa.dyndns-web.com/teaching/comp/par/p9.html.
+
+## Anexo
+
+<p align="justify">
+La <a href="#fig8"> Figura 8</a> y <a href="#fig9"> Figura 9</a>, presentan los resultados para la simulación 
+con 500 particulas, en donde se nota en mayor escala como se van reduciendo los desplazamientos al aumentar la 
+  masa de la particula en <a href="#fig8"> Figura 8</a>, mientras que <a href="#fig9"> Figura 9</a>, se visualiza
+  como van moviendose las particulas en cada iteracción.
+</p>
+
+
+<p align="center">
+<div id="fig8" style="width:300px; height=200px">
+<img src="https://github.com/xoce15/Simulacion_Sistemas/blob/master/Practica_9/Rplot.png" height="70%" width="70%"/><br>
+<b>Figura 8.</b> 500 particulas. 
+</div>
+</p>
+
+<p align="center">
+<div id="fig9" style="width:300px; height=200px">
+<img src="https://github.com/xoce15/Simulacion_Sistemas/blob/master/Practica_9/Graficas/P9R2_500.gif" height="70%" width="70%"/><br>
+<b>Figura 9.</b> Desplazamiento de 500 particulas. 
+</div>
+</p>
+
 
 
