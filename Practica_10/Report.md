@@ -178,7 +178,7 @@ de acuerdo a la FO.
 
 | Factores  | Estadistico W | Valor <img src="https://latex.codecogs.com/gif.latex?p"/>|
 | :-------: | ------:        | -----: |
-| Cambio/Uniforme        | 74899         | 0.000   |
+| Anterior/Supervivencia        | 74899         | 0.000   |
 <caption>Cuadro 2. Pruebas estadísticas </caption><br>
 <br>
 
