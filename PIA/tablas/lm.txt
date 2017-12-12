@@ -1,0 +1,23 @@
+
+Call:
+lm(formula = alexander$efectividad ~ alexander$Zona + alexander$Penetracion + 
+    alexander$Con_Change + alexander$Acopio)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.231135 -0.055326 -0.000156  0.064986  0.284105 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)           -7.566e-02  2.254e-02  -3.356 0.000802 ***
+alexander$Zona         1.027e-04  7.813e-05   1.315 0.188672    
+alexander$Penetracion  2.406e-01  2.004e-02  12.005  < 2e-16 ***
+alexander$Con_Change   1.272e-05  1.098e-04   0.116 0.907764    
+alexander$Acopio       1.590e-02  1.120e-03  14.195  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1125 on 2515 degrees of freedom
+Multiple R-squared:  0.1214,	Adjusted R-squared:   0.12 
+F-statistic: 86.84 on 4 and 2515 DF,  p-value: < 2.2e-16
+
